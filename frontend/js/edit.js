@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded',
                 loadData(employee_id).then(
                     function(employee_data) {
                         console.log(employee_data);
+                        /* password hash is coming through!!! */
                         FormFiller.apply(employee_data);
                     }
                 )
