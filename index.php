@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Employee Manager</title>
-<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="frontend/css/app.css">
 </head>
 <body>
     <h1>Demo</h1>
