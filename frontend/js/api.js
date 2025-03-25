@@ -27,7 +27,7 @@ class EmployeeApi {
     getData(id) {
 
         console.log('getdata');
-        return this.doRequest('employee', { id: id } );
+        return this.doRequest('employee', { 'req': '', id: id } );
     }
 
     doRequest( obj_type, params ) {
@@ -58,6 +58,7 @@ class EmployeeApi {
                         console.log('request success');
                         console.log(request);
                         let ret = JSON.parse(request.responseText);
+                        console.log(ret);
 
                         if ( typeof(ret.success) != 'undefined' ) {
                             if ( ret.success != true ) {
