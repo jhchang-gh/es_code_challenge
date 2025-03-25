@@ -73,6 +73,7 @@ class EmployeeApi {
                     } 
                     else {
                         console.log('request fail');
+                        console.log(request);
                         reject({
                             status: request.status,
                             statusText: request.statusText

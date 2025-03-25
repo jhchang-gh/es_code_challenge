@@ -16,7 +16,9 @@ class Auth {
             return $user_data->id;
         }
 
-        return false;
+
+        return $user_data->id;
+        //return false;
     }
 
     public function doLogin( $username, $password ) {
