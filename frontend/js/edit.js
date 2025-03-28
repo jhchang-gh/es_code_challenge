@@ -24,11 +24,14 @@ document.addEventListener('DOMContentLoaded',
                     function( e ) {
         
                         e.preventDefault();
-        
-                        let api = new EmployeeApi();
-        
-        
-                        alert('Saving not yet implemented (Hint: you should implement it)');
+
+                        //let api = new EmployeeApi();
+
+                        let data = new FormData(this);
+                        let entries = Object.fromEntries(data.entries());
+                        console.log(typeof(entries));
+                        console.log(entries);
+                        api.setData(employee_id,entries);
                         return false;
                     }
                 );

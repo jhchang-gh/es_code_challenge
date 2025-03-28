@@ -25,9 +25,19 @@ class EmployeeApi {
     }
 
     getData(id) {
-
         console.log('getdata');
-        return this.doRequest('employee', { 'req': '', id: id } );
+        return this.doRequest('employee', { 'req': 'get', id: id } );
+    }
+
+    setData(id, fields) {
+        console.log('setdata');
+        console.log(typeof(fields));
+        console.log(fields);
+        let req = { 'req': 'set', id: id};
+        console.log(typeof(req))
+        let params = {...req,...fields};
+        console.log(params);
+        return this.doRequest ('employee', params)
     }
 
     doRequest( obj_type, params ) {
@@ -39,7 +49,7 @@ class EmployeeApi {
         for( param in params ) {
             param_string = param_string + param + '=' + params[param] + '&';
         }
-
+        console.log(param_string);
         let request = new XMLHttpRequest();
 
         return new Promise( 

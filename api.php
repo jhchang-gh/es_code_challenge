@@ -15,7 +15,11 @@ switch( $req_obj ) {
     case 'employee':
         $auth->requireLogin();
         $api = new EmployeeApi();
-        $data = $api->employeeDataGet( $_GET['id'] ) ;
+        if( $req_type == 'get'){
+            $data = $api->employeeDataGet( $_GET['id'] ) ;
+        }else if( $req_type == 'set'){
+            $data = $api->employeeDataSet( $_GET['id'] , $_GET['first_name'], $_GET['last_name'], $_GET['phone'], $_GET['office_number'] ) ;
+        }
     case 'auth':
         if ( $req_type == 'doLogin' ) {
             $data = $auth->doLogin( $_REQUEST['username'], $_REQUEST['password'] );
