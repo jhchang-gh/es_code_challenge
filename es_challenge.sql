@@ -28,9 +28,9 @@ CREATE TABLE `employees` (
   `last_name` varchar(200) DEFAULT NULL,
   `phone` varchar(30) DEFAULT NULL,
   `office_number` varchar(20) DEFAULT NULL,
-  `employment_status` varchar(30) DEFAULT NULL,
   `username` varchar(10) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
+  `employment_status` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +41,7 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (1,'Joe','Smith','(215)245-2552','520','Full-time','joe','$2y$10$l3d7LVRZSXFy2N8rs6y9C.fD9tk5dIAwjQtK.WQWjmVZCw5IAvati');
+INSERT INTO `employees` VALUES (1,'Joe','Smith','(215)245-2552','520','joe','$2y$10$l3d7LVRZSXFy2N8rs6y9C.fD9tk5dIAwjQtK.WQWjmVZCw5IAvati','Full-time');
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

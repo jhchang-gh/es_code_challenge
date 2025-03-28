@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded',
 
                 loadData(employee_id).then(
                     function(employee_data) {
-                        console.log(employee_data);
                         /* password hash is coming through!!! */
                         FormFiller.apply(employee_data);
                     }
@@ -29,8 +28,6 @@ document.addEventListener('DOMContentLoaded',
 
                         let data = new FormData(this);
                         let entries = Object.fromEntries(data.entries());
-                        console.log(typeof(entries));
-                        console.log(entries);
                         api.setData(employee_id,entries);
                         return false;
                     }
