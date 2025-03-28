@@ -18,7 +18,7 @@ switch( $req_obj ) {
         if( $req_type == 'get'){
             $data = $api->employeeDataGet( $_GET['id'] ) ;
         }else if( $req_type == 'set'){
-            $data = $api->employeeDataSet( $_GET['id'] , $_GET['first_name'], $_GET['last_name'], $_GET['phone'], $_GET['office_number'] ) ;
+            $data = $api->employeeDataSet( $_GET['id'] , $_GET['first_name'], $_GET['last_name'], $_GET['phone'], $_GET['office_number'], $_GET['employment_status'] ) ;
         }
     case 'auth':
         if ( $req_type == 'doLogin' ) {

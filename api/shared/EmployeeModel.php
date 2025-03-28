@@ -62,5 +62,17 @@ class EmployeeModel {
         ]);
         return $result;
     }
+    public function setEmploymentStatusById($id,$employment_status) {
+        
+        $db = DB::connect();
+
+        $stmt = $db->prepare('UPDATE employees SET employment_status = :employment_status WHERE id = :id');
+
+        $result = $stmt->execute([
+            ':employment_status' => $employment_status,
+            ':id' => $id
+        ]);
+        return $result;
+    }
 
 }
