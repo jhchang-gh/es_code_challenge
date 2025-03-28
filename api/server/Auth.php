@@ -9,7 +9,7 @@ class Auth {
 
         $model = new UserModel();
         $user_data = $model->getByUsername($username);
-
+        if(!$user_data) return false;
         $db_password = $user_data->password;
 
         if ( password_verify($password, $db_password) ) {
@@ -17,8 +17,9 @@ class Auth {
         }
 
 
-        return $user_data->id;
         //return false;
+        // Bypassing normal authentication procedure for purposes of demo.
+        return $user_data->id;
     }
 
     public function doLogin( $username, $password ) {
