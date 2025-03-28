@@ -1,6 +1,6 @@
 <?php
-
-require_once( dirname(__FILE__) . '/../shared/EmployeeModel.php');
+// Updated require_once instead of hardcoding slashes - best practice format
+require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'shared' . DIRECTORY_SEPARATOR . 'EmployeeModel.php');
 
 class EmployeeApi {
 
@@ -10,6 +10,14 @@ class EmployeeApi {
         return $model->getById($id);
 
     }
+
+/*
+Shotgun function that sets all values everytime
+A better function would be able to cope with having values missing
+And the javascript only passes the values that have changed
+So we would only update the fields that need to be updated
+Should do input validation here
+*/
 
     public function employeeDataSet( $id, $first_name, $last_name, $phone, $office_number, $employment_status ) {
 

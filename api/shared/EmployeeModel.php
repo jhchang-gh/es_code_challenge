@@ -7,17 +7,31 @@ class EmployeeModel {
     public function getById($id) {
         
         $db = DB::connect();
+        /* 
+        Notes:
+        No input validation
+        No error handling
+        Susceptible to SQL injection
+        No else statement for return false
+        */
         $result = $db->query('SELECT * FROM employees WHERE id=' . $id);
         
         if ( $result ) {
             $row = $result->fetchObject();
             return $row;
+        }else{
+            return false;
         }
     }
     public function setFirstNameById($id,$first_name) {
         
         $db = DB::connect();
-
+        /* 
+        Notes:
+        No input validation
+        No error handling
+        Susceptible to SQL injection
+        */
         $stmt = $db->prepare('UPDATE employees SET first_name = :first_name WHERE id = :id');
 
         $result = $stmt->execute([

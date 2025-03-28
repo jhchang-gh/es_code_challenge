@@ -7,9 +7,14 @@ class Auth {
 
     public function verifyCredentials($username, $password) {
 
+        //no input validation
+
         $model = new UserModel();
         $user_data = $model->getByUsername($username);
+
+        //Added a catch for username is not found
         if(!$user_data) return false;
+
         $db_password = $user_data->password;
 
         if ( password_verify($password, $db_password) ) {
@@ -23,6 +28,7 @@ class Auth {
     }
 
     public function doLogin( $username, $password ) {
+        // See notes in next function
         if ( $id = $this->verifyCredentials($username, $password) ) {
             session_start();
             $_SESSION['user_id'] = $id;
@@ -35,7 +41,12 @@ class Auth {
     }
 
     public function requireLogin() {
-
+        /*
+        Notes:
+        Improve authentication process - should be unique authentication token
+        Hashed, expiration, ip address, etc.
+        Currently malicious user can fake a session token and access site
+        */
         session_start();
         if ( empty($_SESSION['user_id']) ) {
             header("HTTP/1.1 403 Access Denied");
