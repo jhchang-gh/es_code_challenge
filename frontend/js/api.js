@@ -32,6 +32,8 @@ class EmployeeApi {
         return this.doRequest ('employee', params)
     }
 
+
+    // Overall this is a pretty well-done function
     doRequest( obj_type, params ) {
 
         let param;
@@ -48,7 +50,6 @@ class EmployeeApi {
 
                 request.onreadystatechange = function() {
 
-                    console.log('readystatechange');
                     // Only run if the request is complete
                     if (request.readyState !== 4) return;
                     

@@ -12,7 +12,7 @@ class EmployeeModel {
         No input validation
         No error handling
         Susceptible to SQL injection
-        No else statement for return false
+        No else statement for return false - added it myself
         */
         $result = $db->query('SELECT * FROM employees WHERE id=' . $id);
         

@@ -22,9 +22,7 @@ class Auth {
         }
 
 
-        //return false;
-        // Bypassing normal authentication procedure for purposes of demo.
-        return $user_data->id;
+        return false;
     }
 
     public function doLogin( $username, $password ) {
