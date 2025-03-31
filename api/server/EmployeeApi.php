@@ -1,9 +1,16 @@
 <?php
+// Prevent direct access to php file
 // Updated require_once instead of hardcoding slashes - best practice format
 require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'shared' . DIRECTORY_SEPARATOR . 'EmployeeModel.php');
 
 class EmployeeApi {
 
+/*
+This function is getting ALL of the fields from the database and sending it out
+Including the username and password!
+Huge security risk to be sending out sensitive information out as a general response
+Data should be trimmed down to only include fields relevant to the employee_edit.html form
+*/
     public function employeeDataGet( $id ) {
 
         $model = new EmployeeModel();

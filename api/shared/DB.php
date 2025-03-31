@@ -1,4 +1,5 @@
 <?php
+// Prevent direct access to php file
 
 class DB {
 

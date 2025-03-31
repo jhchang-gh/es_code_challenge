@@ -1,4 +1,5 @@
 <?php
+// Prevent direct access to php file
 
 require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . 'DB.php');
 

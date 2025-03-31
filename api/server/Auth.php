@@ -1,4 +1,5 @@
 <?php
+// Prevent direct access to php file
 
 require_once( __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'shared' . DIRECTORY_SEPARATOR . 'UserModel.php');
 

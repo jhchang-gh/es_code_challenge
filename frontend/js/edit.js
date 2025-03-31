@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded',
                 loadData(employee_id).then(
                     function(employee_data) {
                         /* password hash is coming through!!! */
+                        console.log(employee_data);
                         FormFiller.apply(employee_data);
                     }
                 )
@@ -24,12 +25,13 @@ document.addEventListener('DOMContentLoaded',
         
                         e.preventDefault();
 
+                        // Redundant variable
                         //let api = new EmployeeApi();
 
-                        let data = new FormData(this);
-                        let entries = Object.fromEntries(data.entries());
+                        // Added code to setData on form submit
+                        const data = new FormData(this);
+                        const entries = Object.fromEntries(data.entries());
                         api.setData(employee_id,entries);
-                        return false;
                     }
                 );
             }

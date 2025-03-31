@@ -15,6 +15,7 @@ switch( $req_obj ) {
     case 'employee':
         $auth->requireLogin();
         $api = new EmployeeApi();
+        // Differentiate req type for 'get' and 'set'
         if( $req_type == 'get'){
             $data = $api->employeeDataGet( $_GET['id'] ) ;
         }else if( $req_type == 'set'){
