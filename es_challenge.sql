@@ -17,6 +17,7 @@
 
 --
 -- Table structure for table `employees`
+-- Added 'employment_status' column to fulfill client requirements
 --
 
 DROP TABLE IF EXISTS `employees`;
