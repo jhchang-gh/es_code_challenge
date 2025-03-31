@@ -82,7 +82,7 @@ class EmployeeApi {
                         
                     }
                 }
-                // File address was not properly set, added directory separators as necessary
+                // File location path was not properly set, updated as necessary
                 request.open("GET", "../../api.php?obj=" + obj_type + '&' + param_string, true);
                 request.send();
             }

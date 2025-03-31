@@ -44,7 +44,6 @@ class Auth {
         Notes:
         Improve authentication process - should be unique authentication token
         Hashed, expiration, ip address, etc.
-        Currently malicious user can fake a session token and access site
         */
         session_start();
         if ( empty($_SESSION['user_id']) ) {
