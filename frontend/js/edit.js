@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded',
 
                 const form = document.getElementById('employee_record');
 
+                // Inefficient having to go through the API all over again
+                // Already went through it once with requireLogin
                 loadData(employee_id).then(
                     function(employee_data) {
                         /* password hash is coming through!!! */

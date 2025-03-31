@@ -1,4 +1,6 @@
 // I like the construction of this class in general
+// Naming of class could be better though. 
+// EmployeeApi gets confusing when there's an EmployeeApi.php file
 // Specific functions feeding into a master function
 class EmployeeApi {
 
